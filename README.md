@@ -32,8 +32,17 @@ Trechos disponíveis:
 * While
 
 ### cFil
+Cria uma variável para armazenar a filial do compartilhamento de uma detemrinada tabela
+Resultado:
+```
+Local cFil[TABELA]  := xFilial('[TABELA]')
+```
+
+Variáveis disponíveis:
+* TABELA: Tabela utilizada no compartilhamento.
 
 ### Conout
+Imprime um log estruturado no console.log.
 Resultado:
 ```
 Conout('ROTINA - DATA| MENSAGEM')
@@ -45,8 +54,20 @@ Variáveis disponiveis:
   * MENSAGEM: Mensagem definida pelo usuário
 
 
+### DbSeek
+Retorna a estrutura de um DbSeek baseada em uma tabela ou alias.
+Resultado:
+```
+If [ALIAS]->(DbSeek( cFil[ALIAS] + [CONDICAO] ))
+ [CURSOR]
+EndIf
+```
+Variáveis disponíveis:
+ * ALIAS: Alias ou tabela definida para posicionar um registro
+ * CONDICAO: Condição para atender a busca do Seek
 
 ### For
+Varre um array definido pelo usuário.
 Resultado:
 ```
 For [VAR] := 1 to Len([ARRAY])
@@ -60,6 +81,7 @@ Variáveis disponiveis:
   * CURSOR: Posição do cursor ao final do snnipet
 
 ### While
+Varre um alias definido pelo usuário
 Resultado:
 ```
 While ([ALIAS])->(! Eof())
